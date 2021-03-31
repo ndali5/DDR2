@@ -1,10 +1,14 @@
 import pygame
 
+from jeu.fleche import Fleches
+from jeu.joueur import Joueur
+
+
 class Gestion
     def __init__ (self):
         self.score = 10
         self.appreciation = ""
-        self.gravite = 9.81
+        self.vitesse = 9.81
         self.mode = 2
         self.musique = ".mp3"
         self.rythme = 70.5
@@ -13,6 +17,10 @@ class Gestion
         self.joueurs= Joueur()
         self.fleches= Fleches()
 
+    def defilement (self, core) :
+        fleches.afficher(core)
+        for i in fleches :
+            fleches.position.y += self.vitesse
 
     def afficher (self):
         pass
